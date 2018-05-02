@@ -4,9 +4,11 @@ all:
 install: rosmasterd.sh rosmasterd.service
 	cp rosmasterd.sh /usr/local/bin/
 	cp rosmasterd.service /etc/systemd/system/
+	cp rosmasterd.conf /etc/
 
 uninstall: /usr/local/bin/rosmasterd.sh /etc/systemd/system/rosmasterd.service
 	rm /usr/local/bin/rosmasterd.sh
 	rm /etc/systemd/system/rosmasterd.service
+	rm /etc/rosmasterd.conf
 
 .PHONY: all install uninstall

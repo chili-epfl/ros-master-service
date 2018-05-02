@@ -4,7 +4,8 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-ExecStart=/usr/local/bin/rosmasterd.sh
+EnironmentFile=/etc/rosmasterd.conf
+ExecStart=/usr/local/bin/rosmasterd.sh $SOURCEFILE $LAUNCHARGS
 
 [Install]
 WantedBy=default.target
